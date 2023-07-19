@@ -35,7 +35,7 @@ https://templatemo.com/tm-583-festava-live
   --copyright-font-size:          16px;
 
   --border-radius-large:          100px;
-  --border-radius-medium:         10px;
+  --border-radius-medium:         20px;
   --border-radius-small:          10px;
 
   --font-weight-light:            300;
@@ -523,11 +523,12 @@ strong {
   border-radius: var(--border-radius-medium);
   display: block;
   min-height: 210px ;
+  max-height: 350px;
 }
 
 .about-text-wrap {
   position: relative;
-  padding: 20px !important;
+  padding: 30px !important;
 }
 
 .about-text-icon {
@@ -566,7 +567,7 @@ strong {
 
 .search-bar{
   
-  background-color: rgba(156, 156, 252, 0.958);
+  background-color: rgb(184, 179, 179);
   min-height: 80px;
   border-radius: 50px !important;
  margin: 5px !important;
@@ -608,7 +609,7 @@ background-color:#6A040F ;
 }
 
 .ticket-details{
-  border-radius: 10px !important;
+  border-radius: 20px !important;
   background-color: #3e061a;
   margin-top: -20px !important;
 }
