@@ -79,7 +79,7 @@ const slideOutputDouble = (arr,i)=>{
     const objectHtml =
       `     
       <div class="row">
-          <div class="col-lg-6 col-12">
+          <div class="col-lg-4 col-12">
               <div class="col ticket-container">
                   <div class="card shadow-sm ticket-body">
                   <img src="./${arr[i].img}"  class="about-image img-fluid" width="">
@@ -124,7 +124,7 @@ const slideOutputDouble = (arr,i)=>{
                   </div>
                   </div>
       </div>
-      <div class="col-lg-6 col-12">
+      <div class="col-lg-4 col-12">
           <div class="col ticket-container">
               <div class="card shadow-sm ticket-body">
               <img src="./${arr[i+1].img}"  class="about-image img-fluid" width="">
@@ -161,6 +161,50 @@ const slideOutputDouble = (arr,i)=>{
           </div>
               
           <button class="btn  btn-outline-secondary ticket-button" onclick="buy(${arr[i+1].id})">Buy Ticket</button>
+              </div>
+              
+              </div>
+              </div>
+              </div>
+              </div>
+      </div>
+      <div class="col-lg-4 col-12">
+          <div class="col ticket-container">
+              <div class="card shadow-sm ticket-body">
+              <img src="./${arr[i+2].img}"  class="about-image img-fluid" width="">
+              <div class="card-body  ticket-details">
+                  <h6 class="event-name text-white">${arr[i+2].name}</h6>
+              <div class="d-flex justify-content-between align-items-center">
+              <div>
+              <!-- Button trigger modal -->
+        <button type="button" class="btn  btn-outline-secondary ticket-button" data-bs-toggle="modal" data-bs-target="#${arr[i+2].modalID}" >
+            View Details
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="${arr[i+2].modalID}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Event Details</h1>
+                  <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <h6 class=" text-dark text-center"> 🎵  ${arr[i+2].name}  🎵</h6>
+                      <p class="text-dark  text-center">Date: 📅  ${arr[i+2].date}</p>
+                      <p class="text-dark  text-center">Time: 🕒 15:00 - 23:00</p>
+                      <p class="text-dark  text-center">Price: 💲 R ${arr[i+2].price}</p>
+        
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+              
+          <button class="btn  btn-outline-secondary ticket-button" onclick="buy(${arr[i+2].id})">Buy Ticket</button>
               </div>
               
               </div>
@@ -274,7 +318,7 @@ const addHTML = (array,firstDiv,existingDiv,j,type)=>{
     // Generate the HTML content for the object using its properties
 
     addHTML(popularEvents,firstDiv,existingDiv,i, "double");
-   i+=1;
+   i+=2;
   };
 
 //music festivals
@@ -299,7 +343,7 @@ for(let i=0; i<6; i++){
  
   // Generate the HTML content for the object using its properties
   addHTML(musicFestivals,firstDiv,existingDiv,i, "double");
-  i+=1;
+  i+=2;
 };
 
 //rock concerts
@@ -324,7 +368,7 @@ for(let i=0; i<6; i++){
  
   // Generate the HTML content for the object using its properties
   addHTML(rockConcerts,firstDiv,existingDiv,i, "double");
-  i+=1;
+  i+=2;
 };
 
 //jazz concerts
@@ -349,7 +393,7 @@ for(let i=0; i<6; i++){
  
   // Generate the HTML content for the object using its properties
   addHTML(jazzConcerts,firstDiv,existingDiv,i, "double");
-   i+=1;
+   i+=2;
 };
 
 //fuction to store selected event in localStorage
