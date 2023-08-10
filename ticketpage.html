@@ -75,28 +75,28 @@
                 <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
 
                     <li class="nav-item">
-                        <a class="nav-link " href="index.html">HOME</a>
+                        <a class="nav-link " href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link  " href="index.html#section_2">ABOUT</a>
+                        <a class="nav-link  " href="index.html#section_2">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link  " href="ticketpage.html">EVENTS</a>
+                        <a class="nav-link  " href="ticketpage.html">Events</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link  " href="index.html#section_4">SCHEDULE</a>
+                        <a class="nav-link  " href="index.html#section_4">Schedule</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link  " href="#section_6">CONTACT</a>
+                        <a class="nav-link  " href="#section_6">Contact</a>
                     </li>
                 </ul>
 
             </div>
-            <a href="ticketpage.html" class="btn custom-btn d-lg-block d-none">BUY TICKET</a>
+            <a href="ticketpage.html" class="btn custom-btn d-lg-block d-none">Buy ticket</a>
         </div>
     </nav>
 <!-- e n d    o f   n a v i g a t i o n    m e n u  -->
@@ -277,277 +277,108 @@
         </section>
 
          <!-- A B O U T    U S   S E C T I O N  -->
+         <div id="modal-container1"></div>
+         <div id="modal-container2"></div>
          
-         <section class="about-section section-padding slide_1" >
-            <div class="container">
-             <div class="row">
-
-                <h2 class="text-white mb-4">Most Popular Events</h2>
+         <section class="about-section section-padding " >
+            <div class="container-fluid">
+              <div class="row">
+                <h2 class="text-white text-center mb-4">Most Popular Events <br>  <a href="ticketpage.html"><button type="button" class="btn btn-lg  dark-red-bg text-white ticket-button">
+                    View more events ▶
+                  </button></a></h2>
                 
                 <div class="container-fluid text-center my-3"> 
                     <div class="row mx-auto my-auto justify-content-center"> 
 
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                           
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                              <div  id="firstSlide">                              
-                              </div>           
-                              <div id="slide-container">                                                       
-                            </div>                       
-                           </div>
+                        <div class="slider-container">
+                            <div class="slider" id="item-slider-popular">
+                              
+                            </div>
+                            <button class="prev-btn slider-button">&larr;</button>
+                            <button class="next-btn slider-button">&rarr;</button>
+                          </div>
 
-                            <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel" role="button" data-bs-slide="prev"> 
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a> 
-                            <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                      
-                    </div> 
+                        
                 </div>
-              </div>
-             </div>
             </div>
+            </div>
+          </div>
         </section>
-        <section class="about-section section-padding slide_2" >
-            <div class="container">
-                <div class="row">
 
-                <h2 class="text-white mb-4">Most Popular Events</h2>
+
+        <section class=" section-padding blue-bg" >
+            <div class="container-fluid">
+              <div class="row">
+                <h2 class="text-white text-center mb-4">Music Festivals</h2>
                 
                 <div class="container-fluid text-center my-3"> 
                     <div class="row mx-auto my-auto justify-content-center"> 
 
-                        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
-                           
-                          
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">                            
-                            <div  id="secondSlide">                                                        
+                        <div class="slider-container">
+                            <div class="slider" id="item-slider-fest">
+                              
                             </div>
-                            <div id="second-slide-container">                                                        
-                            </div>
-                       
-                           </div>
-                            <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel2" role="button" data-bs-slide="prev"> 
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a> 
-                            <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel2" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                       
-                       </div> 
-                  </div>
-               </div>
-             </div>
+                            <button class="prev-btn slider-button">&larr;</button>
+                            <button class="next-btn slider-button">&rarr;</button>
+                          </div>
+
+                        
+                </div>
             </div>
+            </div>
+          </div>
         </section>
+        
 
+        <section class="about-section section-padding " >
+            <div class="container-fluid">
+              <div class="row">
+                <h2 class="text-white text-center mb-4">Rock Concerts</h2>
+                
+                <div class="container-fluid text-center my-3"> 
+                    <div class="row mx-auto my-auto justify-content-center"> 
 
+                        <div class="slider-container">
+                            <div class="slider" id="item-slider-rock">
+                              
+                            </div>
+                            <button class="prev-btn slider-button">&larr;</button>
+                            <button class="next-btn slider-button">&rarr;</button>
+                          </div>
+
+                        
+                </div>
+            </div>
+            </div>
+          </div>
+        </section>
 
        
 
-        <section class="pricing-section section-padding section-bg slide_3 blue-bg" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center text-white mb-4">Music Festivals</h2>                     
-                    </div>
-                    <div class="container-fluid text-center my-3"> 
-                        <div class="row mx-auto my-auto justify-content-center"> 
-    
-                            <div id="myCarousel3" class="carousel slide" data-ride="carousel">
-                               
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                  <div  id="firstSlide-fest">                              
-                                  </div>           
-                                  <div id="slide-container-fest">                                                       
-                                </div>                       
-                               </div>
-    
-                                <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel3" role="button" data-bs-slide="prev"> 
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </a> 
-                                <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel3" role="button" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </a>                         
-                        </div> 
-                    </div>
-                </div>
-             </div>
-            </div>
-        </section>
-        <section class="pricing-section section-padding blue-bg slide_4" >
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center text-white mb-4">Music Festivals</h2>                     
-                    </div>
-                    <div class="container-fluid text-center my-3"> 
-                        <div class="row mx-auto my-auto justify-content-center"> 
-    
-                            <div id="myCarousel4" class="carousel slide" data-ride="carousel">
-                               
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                  <div  id="secondSlide-fest">                              
-                                  </div>           
-                                  <div id="second-slide-container-fest">                                                       
-                                </div>                       
-                               </div>
-    
-                                <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel4" role="button" data-bs-slide="prev"> 
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </a> 
-                                <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel4" role="button" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </a>
-                           
-                        </div> 
-                    </div>
-                </div>
-             </div>
-            </div>
-        </section>
-
-        <section class="about-section section-padding slide_5" >
-            <div class="container">
+        <section class="blue-bg section-padding " >
+            <div class="container-fluid">
               <div class="row">
-
-                <h2 class="text-white mb-4 text-center">Rock Concerts</h2>
-
+                <h2 class="text-white text-center mb-4">Jazz Concerts</h2>
+                
                 <div class="container-fluid text-center my-3"> 
                     <div class="row mx-auto my-auto justify-content-center"> 
 
-                        <div id="myCarousel5" class="carousel slide" data-ride="carousel">
-                           
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                              <div  id="firstSlide-rock">                              
-                              </div>           
-                              <div id="slide-container-rock">                                                       
-                            </div>                       
-                           </div>
+                        <div class="slider-container">
+                            <div class="slider" id="item-slider-jazz">
+                              
+                            </div>
+                            <button class="prev-btn slider-button">&larr;</button>
+                            <button class="next-btn slider-button">&rarr;</button>
+                          </div>
 
-                            <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel5" role="button" data-bs-slide="prev"> 
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a> 
-                            <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel5" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                       
-                    </div> 
-                </div>
-              </div>
-             </div>
-            </div>
-        </section>
-        <section class="about-section section-padding slide_6" >
-            <div class="container">
-             <div class="row">
-
-                <h2 class="text-white mb-4 text-center">Rock Concerts</h2>
-
-                <div class="container-fluid text-center my-3"> 
-                    <div class="row mx-auto my-auto justify-content-center"> 
-
-                        <div id="myCarousel6" class="carousel slide" data-ride="carousel">
-                           
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                              <div  id="secondSlide-rock">                              
-                              </div>           
-                              <div id="second-slide-container-rock">                                                       
-                            </div>                       
-                           </div>
-
-                            <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel6" role="button" data-bs-slide="prev"> 
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a> 
-                            <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel6" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                       
-                    </div> 
-                </div>
-              </div>
-             </div>
-            </div>
-        </section>
-
-        <section class="pricing-section section-padding blue-bg slide_7" >
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4 text-white">Jazz Concerts</h2>
-                    </div>
-
-                    <div class="container-fluid text-center my-3"> 
-                        <div class="row mx-auto my-auto justify-content-center"> 
-    
-                            <div id="myCarousel7" class="carousel slide" data-ride="carousel">
-                               
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                  <div  id="firstSlide-jazz">                              
-                                  </div>           
-                                  <div id="slide-container-jazz">                                                       
-                                </div>                       
-                               </div>
-    
-                                <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel7" role="button" data-bs-slide="prev"> 
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </a> 
-                                <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel7" role="button" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </a>
-                           
-                        </div> 
-                    </div>  
-                  </div>
+                        
                 </div>
             </div>
-        </section>
-
-        <section class="pricing-section section-padding blue-bg slide_8" >
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4 text-white">Jazz Concerts</h2>
-                    </div>
-
-                    <div class="container-fluid text-center my-3"> 
-                        <div class="row mx-auto my-auto justify-content-center"> 
-    
-                            <div id="myCarousel8" class="carousel slide" data-ride="carousel">
-                               
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                  <div  id="secondSlide-jazz">                              
-                                  </div>           
-                                  <div id="second-slide-container-jazz">                                                       
-                                </div>                       
-                               </div>
-    
-                                <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel8" role="button" data-bs-slide="prev"> 
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                </a> 
-                                <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel8" role="button" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                </a>
-                           
-                        </div> 
-                    </div>  
-                </div>
-              </div>
             </div>
+          </div>
         </section>
 
+        
 
         <section class="contact-section section-padding section-bg" >
             <div class="container">
@@ -772,21 +603,16 @@ T e m p l a t e M o
 -->
 
     <!-- JAVASCRIPT FILES -->
-
     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
-    <script src="js/ .js"></script>
     <script src="js/custom.js"></script>
-  
-
-
-<script src="js/index.js"></script>
-<script src="js/search.js"></script>
-
-<script src="js/ticket.js"></script> 
-<script src="js/navbar.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/ticket.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 
