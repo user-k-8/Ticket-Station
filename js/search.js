@@ -50,6 +50,9 @@ const searchOutput=(item)=>{
                       <p class="text-dark  text-center">Time: 🕒 15:00 - 23:00</p>
                       <p class="text-dark  text-center">Price: 💲 R ${eventObject.price}</p>
                     </div>
+                    <div class="text-center">                
+                    <button type="button" class="btn btn-primary"  onclick="readMore(${eventObject.id})">Read More</button>               
+                  </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       
