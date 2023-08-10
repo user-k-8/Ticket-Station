@@ -77,28 +77,28 @@
             <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#">HOME</a>
+                    <a class="nav-link " href="index.html">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_2">ABOUT</a>
+                    <a class="nav-link  " href="index.html#section_2">About</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="ticketpage.html">EVENTS</a>
+                    <a class="nav-link  " href="ticketpage.html">Events</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_4">SCHEDULE</a>
+                    <a class="nav-link  " href="index.html#section_4">Schedule</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_6">CONTACT</a>
+                    <a class="nav-link  " href="#section_6">Contact</a>
                 </li>
             </ul>
-           
+
         </div>
-        <a href="ticketpage.html" class="btn custom-btn d-lg-block d-none">BUY TICKET</a>
+        <a href="ticketpage.html" class="btn custom-btn d-lg-block d-none">Buy ticket</a>
     </div>
 </nav>
 <!-- e n d    o f   n a v i g a t i o n    m e n u  -->
@@ -474,9 +474,12 @@
         <!-- e n d    o f   e v e n t   s c h e d u l e  s e c -->
 
         <!-- Popular Events -->
+        <div id="modal-container1">
 
-        <section class="about-section section-padding slide_1" >
-            <div class="container">
+        </div>
+
+        <section class="about-section section-padding " >
+            <div class="container-fluid">
               <div class="row">
                 <h2 class="text-white text-center mb-4">Most Popular Events <br>  <a href="ticketpage.html"><button type="button" class="btn btn-lg  dark-red-bg text-white ticket-button">
                     View more events ▶
@@ -485,64 +488,19 @@
                 <div class="container-fluid text-center my-3"> 
                     <div class="row mx-auto my-auto justify-content-center"> 
 
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                           
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                              <div  id="firstSlide">                              
-                              </div>           
-                              <div id="slide-container">                                                       
-                            </div>                       
-                           </div>
+                        <div class="slider-container">
+                            <div class="slider" id="item-slider-popular">
+                              
+                            </div>
+                            <button class="prev-btn slider-button">&larr;</button>
+                            <button class="next-btn slider-button">&rarr;</button>
+                          </div>
 
-                            <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel" role="button" data-bs-slide="prev"> 
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a> 
-                            <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                       
-                    </div> 
+                        
                 </div>
             </div>
             </div>
           </div>
-        </section>
-        <section class="about-section section-padding slide_2" >
-            <div class="container">
-                <div class="row">
-                <h2 class="text-white text-center mb-4">Most Popular Events <br>  <a href="ticketpage.html"><button type="button" class="btn btn-lg  dark-red-bg text-white ticket-button">
-                    View more events ▶
-                  </button></a></h2>
-                
-                <div class="container-fluid text-center my-3"> 
-                    <div class="row mx-auto my-auto justify-content-center"> 
-
-                        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
-                           
-                          
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">                            
-                            <div  id="secondSlide">                                                        
-                            </div>
-                            <div id="second-slide-container">                                                        
-                            </div>
-                       
-                           </div>
-                            <a class="carousel-control-prev  w-aut prev-for-button" href="#myCarousel2" role="button" data-bs-slide="prev"> 
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a> 
-                            <a class="carousel-control-next  w-aut prev-for-button" href="#myCarousel2" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                       
-                    </div> 
-                </div>
-
-             </div>
-           </div>
-         </div>
-           
         </section>
 
 
@@ -872,6 +830,7 @@
     <script src="js/index.js"></script>
     <script src="js/search.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/scripts.js"></script>
 
   
     
