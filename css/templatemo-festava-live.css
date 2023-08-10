@@ -377,6 +377,7 @@ strong {
 .navbar {
   /* background: transparent; */
     background-color:#6A040F ;
+    height: 70px;
   z-index: 9;
 }
 
@@ -1279,7 +1280,45 @@ background-color:#6A040F ;
   
 }
 
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* Ensure that the slider width is limited by the container */
+}
 
+.slider {
+  display: flex;
+  width: 100%; /* Set the width to 100% to accommodate all slide items */
+}
+
+.slide-item {
+  flex: 0 0 33.33%; /* Display three items side by side on large devices (33.33% width each) */
+  padding: 20px;
+  text-align: center;
+}
+
+.slider-button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color:#EE5007;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+
+}
+
+.prev-btn {
+  left: 10px;
+
+}
+
+.next-btn {
+  right: 10px;
+}
 
 
 .searchResults{
