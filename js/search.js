@@ -1,29 +1,50 @@
-let isCollapsed = "false";
 
-// function to hide and display filters
-collapseButton.addEventListener('click',  ()=> {
-  if (isCollapsed=="true") {
-    contentDiv.style.visibility="hidden"
-    searchContainer.style.height ="200px"
-    collapseButton.textContent ="🔎Search"
-     isCollapsed = "false";
-  } else {  
-    isCollapsed = "true";
-    contentDiv.style.visibility="visible"
-    searchContainer.style.height ="max-content"
-    searchContainer.style.paddingBottom= "50px"
-    collapseButton.textContent ="✖ Close"
+
+let searchFilter = document.getElementById('search-filter');
+let dateFilter = document.getElementById('date-filter');
+let eventListFilter = document.getElementById('event-list-filter');
+let locationFilter = document.getElementById('location-filter');
+let mainFilter=document.getElementById('main-filter');
+let searchHeading = document.getElementById('search-result-heading');
+let allEvents = document.getElementById('all-events');
+
+mainFilter.addEventListener('change', ()=> {
+
+  searchResults.innerHTML ="";
+  searchHeading.style.display="none";
+  searchContainer.style.height ="max-content";
+  dateFilter.style.display= "none";
+  locationFilter.style.display= "none";
+  eventListFilter.style.display= "none";
+  searchFilter.style.display= "none";
+  const selectedFilter = mainFilter.value;
+
+  if(selectedFilter=="Date"){
+    dateFilter.style.display= "block";
+
   }
+  else if(selectedFilter=="Location"){
+    locationFilter.style.display= "block";
+  }
+  else if(selectedFilter=="EventList"){
+    eventListFilter.style.display= "block";
+    eventObjects.forEach(object => {
+      search(object.name);
 
-});
-
-
+    })
+  }
+  else if(selectedFilter=="Search"){
+    searchFilter.style.display= "block";
+  }else {
+    
+  }
+})
 //function to display search output
 const searchOutput=(item)=>{
     let eventObject = item;
-    searchResults.innerHTML =`
-    <div class="row">
-          <div class="col-lg-5 col-12">
+    searchResults.innerHTML+=`
+  
+          <div class="col-lg-4 col-md-6 col-sm-8 col-10">
               <div class="col ticket-container">
                   <div class="card shadow-sm ticket-body">
                   <img src="./${eventObject.img}"  class="about-image img-fluid" width="">
@@ -69,7 +90,7 @@ const searchOutput=(item)=>{
                   </div>
                   </div>
       </div>
-      </div>`
+      `
 
 }
 
@@ -86,9 +107,8 @@ const performSearch = (text) =>{
 
 //function to perform search using user input and return result
 const search = (userInput)=>{
-   // Clear previous search results
- searchResults.innerHTML = '';
-
+searchHeading.style.display="flex";
+allEvents.style.display="none";
  // search results
  const results = performSearch(userInput); // call function to match user input with an event
  results.forEach((result)=> {
@@ -104,7 +124,9 @@ const search = (userInput)=>{
 }
  
 //Event Search
-searchButton.addEventListener('click', ()=> {  
+searchButton.addEventListener('click', ()=> { 
+  searchResults.innerHTML =""; 
+  searchHeading.style.display="none";
   const text = searchText.value;
   search(text);
 
@@ -138,6 +160,7 @@ eventObjects.forEach(object => {
   select.style.backgroundColor ="transparent";
   select.style.border="none";
   select.style.outline="none";
+  
 });
 
 // Append the select element to an existing div or the window.parent.document body
@@ -146,18 +169,23 @@ eventList.appendChild(select);
 
 // Add event listener to the select element
 select.addEventListener('change', ()=> {
+  searchResults.innerHTML ="";
+  searchHeading.style.display="none";
     // Retrieve the selected value and store it in the selectedEvent variable
     const selectedEvent = select.value;
     search(selectedEvent);
+
 });
 
 // Date Filter
 const monthSelect = window.parent.document.querySelector("#monthSelect");
-const nameSelect = window.parent.document.querySelector("#nameSelect");
+
 
 //Add an event listener to the main select list to handle the change event:
 
 monthSelect.addEventListener("change", () =>{
+  searchResults.innerHTML ="";
+  searchHeading.style.display="none";
     const selectedMonth = parseInt(monthSelect.value);
     const filteredData = eventObjects.filter((item)=> {
       const month = new Date(item.dateFormat).getMonth()+1;
@@ -165,64 +193,35 @@ monthSelect.addEventListener("change", () =>{
       
     });
 
-     // Clear previous options
-  nameSelect.innerHTML = "";
-
-   // Populate the sub select list with the filtered names
-   const  defaultOption = window.parent.document.createElement("option");
-    defaultOption.textContent ="Select Event"
-    nameSelect.appendChild(defaultOption);
 
    filteredData.forEach((item)=> {
-
-    const option = window.parent.document.createElement("option");
-    option.value = item.name;
-    option.textContent = item.name;
-    nameSelect.appendChild(option);
-    
+    search(item.name);
   });
 });
 
-nameSelect.addEventListener('change', ()=> {
-    // Retrieve the selected value and store it in the selectedEvent variable
-    const selectedOption= nameSelect.value;
-    search(selectedOption);
 
-});
 
 // Location Filter
 const locationSelect = window.parent.document.querySelector("#search-select-location");
-const locationSubSelect = window.parent.document.querySelector("#locationSelect");
+
 
 //Add an event listener to the main select list to handle the change event:
 
 locationSelect.addEventListener("change", ()=> {
+  searchResults.innerHTML ="";
+  searchHeading.style.display="none";
     const selectedLocation = locationSelect.value;
-    console.log(selectedLocation)
+  
     const filteredData = eventObjects.filter((item)=> {
         return  item.name.toLowerCase().includes(selectedLocation.toLowerCase());
      
      } );
    
-     // Clear previous options
-  locationSubSelect.innerHTML = "";
-
-   // Populate the sub select list with the filtered names
-    const  defaultOption = window.parent.document.createElement("option");
-    defaultOption.textContent ="Select Event"
-    locationSubSelect.appendChild(defaultOption);
-
    filteredData.forEach((item)=> {
-    const option = window.parent.document.createElement("option");
-    option.value = item.name;
-    option.textContent = item.name;
-    locationSubSelect.appendChild(option); 
+   
+    search(item.name);
+
   });
+
 });
 
-locationSubSelect.addEventListener('change', ()=> {
-
-    // Retrieve the selected value and store it in the selectedEvent variable
-    const selectedOption= locationSubSelect.value;
-    search(selectedOption);
-});
