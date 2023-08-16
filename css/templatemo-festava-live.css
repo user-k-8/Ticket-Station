@@ -555,6 +555,7 @@ strong {
   font-size: 18px !important;
   background-color: transparent !important;
   border: none !important;
+  height: 30px !important;
 }
 
 .event-info{
@@ -565,32 +566,102 @@ strong {
 .text-black{
   color:black;
 }
+#search-button{
+ height: 30px !important;
+ margin-bottom: 15px !important;
+width: 90px !important;
+margin-left: 50px !important;
+display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content:flex-start;
+}
+.dots{
+ padding-top: 5px !important;
+}
 
+.dot-select{
+  
+}
+#location-filter{
+  display: none;
+}
+#search-filter{
+  display: block;
+}
+#event-list-filter{
+  display: none;
+}
+#date-filter{
+  display: none;
+}
+
+#locationSelect{
+  text-align: center;
+  margin-left: 100px;
+}
 .search-bar{
   
-  background-color: rgb(184, 179, 179);
-  min-height: 80px;
-  border-radius: 50px !important;
- margin: 5px !important;
- width: 350px;
+  background-color: rgb(205, 201, 201);
+  height: 60px;
+  border-radius: 100px !important;
+
+ padding-bottom: 10px !important;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content:flex-start;
+ 
+}
+
+#search-result-heading{
+  display: none;
 }
 
 .search-select{
   height: 40px !important;
   font-size: 18px !important;
+  text-align: center !important;
+  padding-bottom: 10px !important;
+  width: 220px !important;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.search-select-event{
+  width: 180px !important;
+  height: 40px !important;
+  margin-left: 30px !important;
+
+}
+
+.search-select-main{
+  width: 180px !important;
+  height: 40px !important;
+  color: white !important;
+}
+#nameSelect{
+  text-align: center;
 }
 
 .search-bar-item{
   padding-top: 20px;
   border-radius: 50px !important;
-
- 
 }
+.search-button-filter{
+  width: 220px;
+ height: 40px !important;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content:flex-start;
+} 
+
 .search-container{
   padding-top: 50px;
 padding-bottom: 60px;
 background-color:#6A040F ;
- height: 220px;
+ height: max-content;
 
 }
 .red-bg{
@@ -628,7 +699,7 @@ background-color:#6A040F ;
   background-color: rgb(3, 3, 50);
 }
 .blue-bg{
-  background-color: #03071E;
+  background-color: #010311;
 }
 .about-text-info {
   backdrop-filter: blur(5px) saturate(180%);
@@ -1345,7 +1416,7 @@ height: 30px;
 
 .contentDiv{
 
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 
