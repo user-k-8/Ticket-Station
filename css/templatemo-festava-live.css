@@ -640,6 +640,10 @@ display: flex;
   height: 40px !important;
   color: white !important;
 }
+
+.option-color{
+  color:#000000 !important;
+}
 #nameSelect{
   text-align: center;
 }
