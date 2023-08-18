@@ -11,10 +11,13 @@ const successMessage3 =document.querySelector("#success-message-2");
 const submit2 =document.querySelector('#submit-Button');
 
 
+
+
 //function to authenticate users
 const authenticate= (object,inputUsername,inputEmail, inputPassword) => {
     return object.username === inputUsername && object.email=== inputEmail && object.password === inputPassword;
   }
+
 
 form2.addEventListener('submit', e =>{
     // prevent form from being submitted
@@ -34,10 +37,17 @@ form2.addEventListener('submit', e =>{
         successMessage2.textContent ="Authentication successful!";
         form2.dataset.authenticationValid = "true";
         let logStatus = {logstatus:"loggedin"}
+        
         localStorage.setItem("logStatus", JSON.stringify(logStatus));
         form2.submit();
-        window.location.href = "ticket.html"
-    } else {
+       
+        if("redirect" in localStorage){
+            window.location.href = "ticket.html";
+          }
+          else{
+        window.location.href = "ticketpage.html";
+          }
+    }else {
         successMessage2.textContent ="Invalid username or password!";
     }
   
