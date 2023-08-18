@@ -1,206 +1,755 @@
+<!doctype html>
+<html lang="en">
 
-const searchButton = window.parent.document.querySelector('#search-button');
-const searchText = window.parent.document.querySelector('#search-text');
-const searchDate = window.parent.document.querySelector('#search-date');
-const searchResults = window.parent.document.querySelector('#search-results');
-const collapseButton = window.parent.document.querySelector('.collapseBtn');
-const contentDiv = window.parent.document.querySelector('.contentDiv');
-const searchContainer =window.parent.document.querySelector('.search-container');
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Ticket Station - Events</title>
+    <!-- Bootstrap link -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+   <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'>
 
-eventsArray=["Joburg Music Festival 2023","Cape Town Music Festival", "Durban Music Festival 2023", "Bloemfontein Music Festival", "Pretoria Music Festival", "Polokwane Music Festival", "Pietermaritzburg Music Festival", "Johannesburg Jazz Concert", "Cape Town Jazz Concert", "Durban Jazz Concert 2023", "Bloemfontein Jazz Concert", "Pretoria Jazz Concert 2023","Polokwane Jazz Concert","Pietermaritzburg Jazz Concert","Joburg Rock Concert 2023","Cape Town Rock Concert", "Durban Rock Concert 2023","Bloemfontein Rock Concert", "Pretoria Rock Concert 2023", "Polokwane Rock Concert", "Pietermaritzburg Rock Concert"];
+    <!-- CSS FILES -->
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-// Event object constructor
-class MusicEvent{
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
 
-    constructor(name, date, price, img, id, dateFormat, modalID, ticketID, location, artists){
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
-        this.name = name;
-        this.date = date;
-        this.price = price;
-        this.img=img;
-        this.id =id;
-        this.dateFormat= dateFormat;
-        this.modalID= modalID;
-        this.ticketID = ticketID;
-       this.location=location;
-       this.artists= artists;
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
 
-    }
-}
+    <link href="css/templatemo-festava-live.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/style.css">
+     <!-- GOOGLE FONTS  -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+   
+    
 
-let johannesburgMusicFestival = new MusicEvent("Joburg Music Festival 2023", "11-13 November", 699 , "images/R (2).jpg" , "johannesburgMusicFestival", '2023-11-11' , "modal1", "ticket1", "Harmonia Gardens Amphitheater", "1. Taylor Sparks 2. The Beatlejams 3. Neon Skyline 4. Starstruck Avenue"); 
-let johannesburgMusicFestivalPopular = new MusicEvent("Joburg Music Festival 2023", "11-13 November", 699 , "images/R (2).jpg" , "johannesburgMusicFestivalPopular", '2023-11-11'  , "modal2", "ticket2", "Harmonia Gardens Amphitheater", "1. Taylor Sparks 2. The Beatlejams 3. Neon Skyline 4. Starstruck Avenue"); 
-let capeTownMusicFestival =new MusicEvent("Cape Town Music Festival", "10-17 October", 599 , "images/tomorrowland-youredm.jpg", "capeTownMusicFestival", '2023-10-17',  "modal3", "ticket3" , "Melody Mirage Dome" , "1. Willow Wind2. The Whispering Pines 3. Sunflower Strings 4. Wildwood Wanderers");
-let capeTownMusicFestivalPopular =new MusicEvent("Cape Town Music Festival", "10-17 October", 599 , "images/tomorrowland-youredm.jpg", "capeTownMusicFestivalPopular", '2023-10-17' , "modal4", "ticket4", "Melody Mirage Dome","1. Willow Wind2. The Whispering Pines 3. Sunflower Strings 4. Wildwood Wanderers");
-let durbanMusicFestival =new MusicEvent("Durban Music Festival 2023", "9-17 September",799 ,"images/maxresdefault.jpg","durbanMusicFestival",'2023-09-09' , "modal5" , "ticket5", "TempoTropolis Stadium", "1. Electric Pulse 2. Luna Rhythms 3. Synthwave Syndicate 4. Techno Titans");
-let bloemfonteinMusicFestival = new MusicEvent("Bloemfontein Music Festival", "8-14 March", 499 , "images/sunburn-fest.jpg", "bloemfonteinMusicFestival", '2023-03-14' , "modal6" , "ticket6", "Rhythm Realm Arena", "1. Dusty Trails 2. Southern Harmony 3. Backroad Ramblers 4. Midnight Rodeo");
-let pretoriaMusicFestival = new MusicEvent("Pretoria Music Festival", "15-17 May", 599 , "images/Imagesplash01.jpg", "pretoriaMusicFestival", '2023-05-15' , "moda7", "ticket7", "Crescendo Cove Pavilion", "1. Velvet Soul 2. Moonlight Groove 3. Soulful Serenade 4. Midnight Blues");
-let polokwaneMusicFestival = new MusicEvent("Polokwane Music Festival", "16-22 July", 799 , "images/R (6).jpg", "polokwaneMusicFestival", '2023-07-16' , "modal8", "ticket8", "Euphonic Oasis Garden", "1. Echoes of Tomorrow 2. The Cosmic Runaways 3. Gravity's Edge 4. Electric Dreamscape");
-let pietermaritzburgFestival = new MusicEvent("Pietermaritzburg Music Festival", "24-27 August", 599 , "images/abstral-official-bdlMO9z5yco-unsplash.jpg", "pietermaritzburgFestival", '2023-08-24' , "modal9", "ticket9",  "Harmonic Harbor Pier", "1. Funky Fusion2. Soul Train Revival 3. Groove Nation 4. Funkadelic Jam");
-let johannesburgJazzConcert = new MusicEvent("Johannesburg Jazz Concert", "15-19 September", 699 , "images/R.png", "johannesburgJazzConcert", '2023-09-15'  , "modal10", "ticket10", "Serenade Sanctuary Hall", "1. Caribbean Breeze 2. Island Vibe 3. Reggae Roots Collective 4. Rhythm Redemption");
-let johannesburgJazzConcertPopular = new MusicEvent("Johannesburg Jazz Concert", "15-19 September", 699 , "images/R.png", "johannesburgJazzConcertPopular", '2023-09-15' , "modal11", "ticket11", "Serenade Sanctuary Hall", "1. Caribbean Breeze 2. Island Vibe 3. Reggae Roots Collective 4. Rhythm Redemption" );
-let capeTownJazzConcert = new MusicEvent("Cape Town Jazz Concert", "18-21 April", 599 , "images/R (4).jpg", "capeTownJazzConcert", '2023-04-18' , "modal12" , "ticket12", "Cadence Castle Courtyard", "1. Mic Drop Kings 2. Flow Dynasty 3. Lyricist Lounge 4. Urban Rhythm Crew");
-let capeTownJazzConcertPopular = new MusicEvent("Cape Town Jazz Concert", "18-21 April", 599 , "images/R (4).jpg", "capeTownJazzConcertPopular", '2023-04-18' , "modal13", "ticket13", "Cadence Castle Courtyard", "1. Mic Drop Kings 2. Flow Dynasty 3. Lyricist Lounge 4. Urban Rhythm Crew");
-let durbanJazzConcert = new MusicEvent("Durban Jazz Concert 2023", "8-12 June", 499 , "images/maxresdefault (1).jpg", "durbanJazzConcert", '2023-06-08' , "modal14", "ticket14", "Sonorous Skyline Rooftop", "1. Serenade Symphony 2. Modern Maestros 3. Orchestral Elegance 4. Melodic Fusion");
-let bloemfonteinJazzConcert = new MusicEvent("Bloemfontein Jazz Concert", "5-9 November" , 499 , "images/The-Jazz-Experience-A-Fine-Smooth-Jazz-Session-cover.jpg", "bloemfonteinJazzConcert", '2023-11-05' , "modal15", "ticket15", "Melodia Meadows Field", "1. Smooth Jazz All-Stars 2. Jazz Noir Quartet 3. Swingin' Soul Ensemble 4. Jazz Odyssey");
-let pretoriaJazzConcert = new MusicEvent("Pretoria Jazz Concert 2023","20-24 December", 699 , "images/R (7).jpg", "pretoriaJazzConcert",'2023-12-20' , "modal16", "ticket16", "Harmony Haven Retreat", "1. Thunderstrike 2. Infernal Abyss 3. Meltdown Mayhem 4. Dark Requiem" );
-let polokwaneJazzConcert = new MusicEvent("Polokwane Jazz Concert", "16-20 February", 399 , "images/OIP (7).jpg", "polokwaneJazzConcert", '2023-02-16' , "modal17", "ticket17", "Decibel Den Club", "1. Salsa Fiesta 2. Rumba Rhythms 3. Tango Fire 4. Mariachi Magic");
-let pietermaritzburgJazzConcert = new MusicEvent("Pietermaritzburg Jazz Concert", "27-31 October", 499 , "images/jazz-image-3.jpg", "pietermaritzburgJazzConcert", '2023-10-27' , "modal18", "ticket18",  "Harmonic Harbor Pier", "1. Funky Fusion2. Soul Train Revival 3. Groove Nation 4. Funkadelic Jam");
-let johannesburgRockConcert = new MusicEvent("Joburg Rock Concert 2023", "22-25 January", 399 , "images/R.jpg", "johannesburgRockConcert", '2023-01-22' , "modal19", "ticket19", "Chorus Canyon Theatre", "1. Stellar Voices 2. Pop Princess Collective 3. Diamond Divas 4. Glitterati Queens");
-let johannesburgRockConcertPopular = new MusicEvent("Joburg Rock Concert 2023", "22-25 January", 399 , "images/R.jpg", "johannesburgRockConcertPopular", '2023-01-22' , "modal20", "ticket20", "Chorus Canyon Theatre", "1. Stellar Voices 2. Pop Princess Collective 3. Diamond Divas 4. Glitterati Queens");
-let capeTownRockConcert = new MusicEvent("Cape Town Rock Concert", "10-14 August", 399 , "images/OIP (1).jpg", "capeTownRockConcert",  '2023-08-23' , "modal21", "ticket21", "Symphonia Grove Grove", "1. Midnight Blues 2. Soulful Stompers 3. Delta Crossroads 4. Bluesy Jam Session");
-let capeTownRockConcertPopular = new MusicEvent("Cape Town Rock Concert", "10-14 August", 399 , "images/OIP (1).jpg", "capeTownRockConcertPopular",  '2023-08-23' , "modal22", "ticket22", "Symphonia Grove Grove", "1. Midnight Blues 2. Soulful Stompers 3. Delta Crossroads 4. Bluesy Jam Session");
-let durbanRockConcert = new MusicEvent("Durban Rock Concert 2023", "2-5 July", 599 , "images/R (1).jpg", "durbanRockConcert", '2023-07-02' , "modal23", "ticket23", "Orchestra Oasis Oasis", "1. Acoustic Alchemy 2. Unplugged Harmonies 3. Chilled Strings 4. Acoustic Revival");
-let bloemfonteinRockConcert = new MusicEvent("Bloemfontein Rock Concert", "24-28 May" , 499 , "images/OIP (2).jpg", "bloemfonteinRockConcert", '2023-05-24' , "modal24", "ticket24", "Melody Mesa Ridge", "1. Global Groove Ensemble 2. Worldbeat Wanderers 3. Ethereal Echoes 4. Transcendental Tribe");
-let pretoriaRockConcert = new MusicEvent("Pretoria Rock Concert 2023", "28-31 March", 599 , "images/OIP (9).jpg", "pretoriaRockConcert", '2023-03-28' , "modal25", "ticket25", "Melodious Moonlight Terrace", "1. Eternal Nightfall 2. Shadow's Embrace 3. Gothic Requiem 4. Dark Melancholia");
-let polokwaneRockConcert= new MusicEvent("Polokwane Rock Concert", "24-28 June",  499 , "images/R (1).png", "polokwaneRockConcert", '2023-06-24' , "modal26" , "ticket26", "Harmonic Harbor Pier", "1. Funky Fusion2. Soul Train Revival 3. Groove Nation 4. Funkadelic Jam");
-let pietermaritzburgRockConcert = new MusicEvent("Pietermaritzburg Rock Concert", "10-14 December", 499 , "images/OIP (3).jpg", "pietermaritzburgRockConcert", '2023-12-10'  , "modal27", "ticket27",  "Harmonic Harbor Pier", "1. Funky Fusion2. Soul Train Revival 3. Groove Nation 4. Funkadelic Jam");
-let eventObjects = [johannesburgMusicFestival, capeTownMusicFestival, durbanMusicFestival, bloemfonteinMusicFestival, pretoriaMusicFestival, polokwaneMusicFestival, pietermaritzburgFestival, johannesburgJazzConcert, capeTownJazzConcert, durbanJazzConcert, bloemfonteinJazzConcert, pretoriaJazzConcert, polokwaneJazzConcert, pietermaritzburgJazzConcert, johannesburgRockConcert, capeTownRockConcert, durbanRockConcert, bloemfonteinRockConcert, pretoriaRockConcert, polokwaneRockConcert, pietermaritzburgRockConcert];
+</head>
 
+<body>
 
-//adding events  to webpage
+    <main>
 
-let popularEvents =  [ johannesburgMusicFestivalPopular,johannesburgJazzConcertPopular,johannesburgRockConcertPopular,capeTownMusicFestivalPopular,capeTownRockConcertPopular,capeTownJazzConcertPopular];
-let musicFestivals =  [ johannesburgMusicFestival, capeTownMusicFestival, durbanMusicFestival, bloemfonteinMusicFestival, pretoriaMusicFestival, polokwaneMusicFestival];
-let rockConcerts=[  johannesburgRockConcert, capeTownRockConcert, durbanRockConcert, bloemfonteinRockConcert, pretoriaRockConcert, polokwaneRockConcert];
-let jazzConcerts =[ johannesburgJazzConcert, capeTownJazzConcert, durbanJazzConcert, bloemfonteinJazzConcert, pretoriaJazzConcert, polokwaneJazzConcert];
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
 
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0 event-date">
+                            <i class="bi-person custom-icon me-2"></i>
+                            <strong class="text-white"> Your Gateway to SA Music Events </strong>
+                        </p>
+                    </div>
 
-const  slideOutput= (eventArray,j)=>{
-  const objectHTML =
-  ` 
-  <div class="carousel-item col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-          <div class="col ticket-container">
-              <div class="card shadow-sm ticket-body">
-              <img src="./${eventArray[j].img}"  class="about-image img-fluid" width="">
-              <div class="card-body  ticket-details ">
-                  <h6 class="event-name text-white">${eventArray[j].name}</h6>
-              <div class="d-flex justify-content-between align-items-center ">
-              <div>
-              <!-- Button trigger modal -->
-        <button type="button" class="btn btn-sm  btn-outline-secondary ticket-button details-button" data-bs-toggle="modal" data-bs-target="#${eventArray[j].id}" >
-            View Details
-          </button>
-              
-              <button class="btn btn-sm btn-outline-secondary ticket-button" onclick="buy(${eventArray[j].id})">Buy Ticket</button>
-              </div>
-              
-              </div>
-              </div>
-              </div>
-              </div>
-  </div>
-  
-`
-return objectHTML;
-}
-
-const modalOutput= (eventArray, j)=>{
-
-  const modalHTML =`
-   <!-- Modal -->
-          <div class="modal fade" id="${eventArray[j].id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Event Details</h1>
-                  <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                <h6 class=" text-dark text-center"> 🎵  ${eventArray[j].name}  🎵</h6>
-                  <p class="text-dark  text-center">Date: 📅  ${eventArray[j].date}</p>
-                  <p class="text-dark  text-center">Time: 🕒 15:00 - 23:00</p>
-                  <p class="text-dark  text-center">Price: 💲 R ${eventArray[j].price}</p>             
-                </div>
-                <div class="text-center">                
-                  <button type="button" class="btn btn-primary"  onclick="readMore(${eventArray[j].id})">Read More</button>               
-                </div>
-                <div class="modal-footer">                
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                
-                </div>
-              </div>
             </div>
-          </div>`
-          return modalHTML;
-}
+        </header>
 
-let sliderItemContainer = document.getElementById('item-slider-popular');
-let modalContainer1 =document.getElementById('modal-container1');
-let modalContainer2 =document.getElementById('modal-container2');
-//popular  events
+    <!-- N A V I GA T I O N    M E N U  -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            
+            <a class="navbar-brand text-white" >
+                Ticket Station
+            </a>
 
-for(let i =0; i<popularEvents.length; i++){
-  let itemHTML = slideOutput(popularEvents,i);
-  sliderItemContainer.innerHTML += itemHTML;
-  let modalHTML= modalOutput(popularEvents,i);
-  modalContainer1.innerHTML += modalHTML;
-}
+            
+            <a href="signup.html" class="btn custom-btn d-lg-none ms-auto me-4" id="login1">Login</a>
+           
+            <button   id="navExpand" class=" navbar-toggler " type="button" 
+                aria-expanded="false" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-//music festivals
-let sliderItemContainerFest = document.getElementById('item-slider-fest');
+            <div  id="nav-Bar" class="">
+                <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
 
-for(let i =0; i<musicFestivals.length; i++){
-  let itemHTML = slideOutput(musicFestivals,i);
-  sliderItemContainerFest.innerHTML += itemHTML;
-  let modalHTML= modalOutput(musicFestivals,i);
-  modalContainer2.innerHTML += modalHTML;
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
 
-}
+                    <li class="nav-item">
+                        <a class="nav-link  " href="index.html#section_2">About</a>
+                    </li>
 
-//rock concerts
-let sliderItemContainerRock = document.getElementById('item-slider-rock');
+                    <li class="nav-item">
+                        <a class="nav-link  " href="ticketpage.html">Events</a>
+                    </li>
 
-for(let i =0; i<rockConcerts.length; i++){
-  let itemHTML = slideOutput(rockConcerts,i);
-  sliderItemContainerRock.innerHTML += itemHTML;
-  let modalHTML= modalOutput(rockConcerts,i);
-  modalContainer2.innerHTML += modalHTML;
+                    <li class="nav-item">
+                        <a class="nav-link  " href="index.html#section_4">Schedule</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link  " href="#section_6" onclick="logOut()">Sign out</a>
+                    </li>
+                </ul>
 
-}
+            </div>
+            <a href="signup.html" class="btn custom-btn d-lg-block d-none text-white" >Login</a>
+           
+        </div>
+    </nav>
+<!-- e n d    o f   n a v i g a t i o n    m e n u  -->
 
-//jazz concerts
-let sliderItemContainerJazz= document.getElementById('item-slider-jazz');
+   <!-- H E R O    S E C T I O N  -->
+        <!-- H E R O    S E C T I O N  -->
+     <section class="hero-section" id="section_1">
+        <div class="section-overlay"></div>
 
-for(let i =0; i<jazzConcerts.length; i++){
-  let itemHTML = slideOutput(jazzConcerts,i);
-  sliderItemContainerJazz.innerHTML += itemHTML;
-  let modalHTML= modalOutput(jazzConcerts,i);
-  modalContainer2.innerHTML += modalHTML;
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="row">
 
-}
+                <div class="col-12 mt-auto mb-5 text-center">
+                   
+                    
+                    <h1 class="text-white"> Ticket Station</h1><br>
+                    <h5 class="text-white">Browse upcoming SA music events</h5><br>
+    
+                    <a class="btn custom-btn smoothscroll" href="#section_2">Let's begin</a>
+                   
+                </div>
 
-//fuction to store selected event in localStorage
-function buy(object){
+                <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                    <div class="date-wrap">
+                        <h5 class="text-white">
+                            <i class="custom-icon bi-clock me-2"></i>
+                         Cape Fest,  18 - 19<sup>th</sup> Sep  
+                        </h5>
+                    </div>
 
-  var a=object;
-  localStorage.setItem("a", JSON.stringify(a));
+                    <div class="location-wrap mx-auto py-3 py-lg-0">
+                        <h5 class="text-white">
+                            <i class="custom-icon bi-geo-alt me-2"></i>
+                            Cape Town, South Africa
+                        </h5>
+                    </div>
+
+                    <!-- S O C I A L S  L I N K E D  -->
+                    <div class="social-share">
+                        <ul class="social-icon d-flex align-items-center justify-content-center">
+                            <span class="text-white me-3">Share:</span>
+
+                            <!-- f a c e b o o k  -->
+                            <li class="social-icon-item">
+                                <a href="https://www.facebook.com/DreamvilleFest/" class="social-icon-link">
+                                    <span class="bi-facebook"></span>
+                                </a>
+                            </li>
+                            <!-- t w i t t e r  -->
+                            <li class="social-icon-item">
+                                <a href="https://twitter.com/dreamvillefest" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+                            <!-- i n s t a g r a m  -->
+                            <li class="social-icon-item">
+                                <a href="https://www.instagram.com/dreamvillefest/" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- B A C K G R O U N D   V I D E O   O N   H E R O   S E C T I O N  -->
+        <div class="video-wrap">
+            <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                <source src="video/pexels-tima-miroshnichenko-4916813-1920x1080-60fps.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+        <!-- E N D   O F   H E R O   S E C T I O N  -->
+
+        <section class="search-container blue-bg" id="section_2">
+            <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                <div class="location-wrap mx-auto py-3 py-lg-0">
+                    <h5 class="text-white">
+
+                        Use a filter to find an event
+                    </h5><br>
+                    
+                </div>  
+            </div>
+          
+             <div class="row  align-items-center justify-content-center">
+                <button  class="btn custom-btn search-button-filter col-xl-2 col-lg-3 col-md-3 col-sm-4 col-xs-8 " >
+                    <div class="  dots" ><select  class="form-select search-select-main event-input dot-select"  id="main-filter"  aria-label="Default select example">
+                    <option selected>🔎Choose filter</option>
+                    <option class="option-color" value="EventList">Events- Newest to Oldest</option>
+                    <option class="option-color" value="Date">Filter by Date </option>
+                    <option class="option-color" value="Location">Filter by Location</option>
+                     <option class="option-color" value="Search">Type to search</option>
+                   
+                  </select></div>
+                </button>
+               </div><br>
+             <div class=" d-flex align-items-center justify-content-center  contentDiv">
+            
+                               <div class="search-bar col-xl-4 col-lg-4   col-md-7 col-sm-8   col-10" id="search-filter">
+                        <div class="row col-12">
+                            <div class="col-lg-7 col-md-8 col-sm-5 col-7 search-bar-item">
+                                <input class="form-control event-input search-select-event" list="datalistOptions" id="search-text" placeholder="Type to search ">
+                                <datalist id="datalistOptions">
+                                    <option >Joburg Music Festival 2023</option>
+                                    <option >Cape Town  Music Festival</option>
+                                    <option >Durban Music Festival 2023</option>
+                                    <option >Bloemfontein  Music Festival</option>
+                                    <option >Pretoria Music Festival</option>
+                                    <option >Polokwane Music Festival</option>
+                                    <option >Pietermaritzburg  Music Festival</option>
+                                    <option >Johannesburg Jazz Concert</option>
+                                    <option >Cape Town  Jazz Concert</option>
+                                    <option >Durban Jazz Concert 2023</option>
+                                    <option >Bloemfontein  Jazz Concert</option>
+                                    <option >Pretoria Jazz Concert 2023</option>
+                                    <option >Polokwane Jazz Concert</option>
+                                    <option >Pietermaritzburg Jazz Concert</option>
+                                    <option >Joburg Rock Concert 2023</option>
+                                    <option >Cape Town Rock Concert</option>
+                                    <option >Durban Rock Concert 2023</option>
+                                    <option >Bloemfontein  Rock Concert</option>
+                                    <option >Pretoria Rock Concert 2023</option>
+                                    <option >Polokwane Rock Concert</option>
+                                    <option >Pietermaritzburg Rock Concert</option>
+                                </datalist>
+                            </div>
+                            <div class="col-lg-5 col-md-4 col-sm-4 col-5 search-bar-item search-button-container"><button type="submit" class="btn custom-btn " id="search-button">Search</button></div>
+                           
+                        </div>                           
+                    </div>
+                <div class="search-bar col-auto" id="event-list-filter">
+                    <div class="row">
+                        <div class="col-auto search-bar-item" id="event-list">                     
+                        </div>                 
+                    </div>                           
+                </div>
+                
+                <div class="search-bar col-lg-3  col-md-4 col-sm-6 col-10 " id="date-filter">
+                    <div class="row col-12">        
+                        <div class="col-12 search-bar-item">
+                         <select  class="form-select search-select event-input"  id="monthSelect" aria-label="Default select example">
+                            <option selected><i class="custom-icon bi-geo-alt me-2"></i>📅 Filter by Date</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                          </select>
+                        </div> 
+                    </div>                           
+                </div>
+                <div class="search-bar col-lg-3  col-md-4 col-sm-6 col-10" id="location-filter">
+                    <div class="row col-12">
+                        
+            
+                        <div class="col-12 search-bar-item">
+                         <select class="form-select search-select event-input"  id="search-select-location" aria-label="Default select example">
+                            <option selected><i class="custom-icon bi-geo-alt me-2"></i>🌍Filter by Location</option>
+                            <option value="Johannesburg">Johannesburg</option>
+                            <option value="Cape Town">Cape Town</option>
+                            <option value="Pretoria">Pretoria</option>
+                            <option value="Bloemfontein">Bloemfontein</option>
+                            <option value="Durban">Durban</option>
+                            <option value="Polokwane">Polokwane</option>
+                            <option value="Pietermaritzburg">Pietermaritzburg</option>
+                            
+                          </select>
+                        
+                        </div> 
+                                  
+                    </div>                           
+                </div>
+             </div><br><br>
+             <div class="row  align-items-center justify-content-center" id="search-result-heading">
+                <h2 class="text-white text-center mb-4">Your Search Results </h2>
+                <a  class="btn custom-btn search-button-filtercol-xl-2 col-lg-3 col-md-3 col-sm-4 col-xs-8 col-5" href="ticketpage.html" >
+                            Back to all events  ▶
+                </a>
+                
+               </div>
+               <br><br>
+             <div id="search-results" class="row col-12 searchResults d-flex align-items-center justify-content-center">
+                
+                
+            </div>
+        </section>
+
+       
+
+         <!-- A B O U T    U S   S E C T I O N  -->
+         <div id="modal-container1"></div>
+         <div id="modal-container2"></div>
+         <section id="all-events">
+            
+         <section class="about-section section-padding " >
+            <div class="container-fluid">
+              <div class="row">
+                <h2 class="text-white text-center mb-4">Most Popular Events </h2>
+                
+                <div class="container-fluid text-center my-3"> 
+                    <div class="row mx-auto my-auto justify-content-center"> 
+
+                          <div class="container py-3">
+                            <div class="p-3 m-n3 overflow-hidden">
+                              <div id="carousel-multiple-1" class="carousel slide carousel-multiple" data-ride="carousel"
+                                   data-maximum-items-per-slide="4">
+                                <div class="row position-relative">
+                                  <div class="row carousel-inner mx-0" id="item-slider-popular">
+                                    <div class="carousel-item col-xs-8 col-sm-6 col-md-6 col-lg-4 col-xl-4 active">
+                                        <div class="col ticket-container">
+                                            <div class="card shadow-sm ticket-body">
+                                            <img src="./images/OIP (1).jpg"  class="about-image img-fluid" width="">
+                                            <div class="card-body  ticket-details first-item">
+                                                <h6 class="event-name text-white text-center first-item-text">Most Popular Events!<br> Scroll right ▶</h6>
+                                            
+                                            </div>
+                                            </div>
+                                            </div>
+                                </div>
+                                   
+                                  </div>
+                                  <a class="carousel-control-prev slide-button" href="#carousel-multiple-1" role="button" data-slide="prev">
+                                    <span class=" prev-button" ><<</span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next   slide-button" href="#carousel-multiple-1" role="button" data-slide="next">
+                                    <span class=" forward-button" >>></span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                </div>
+            </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class=" section-padding blue-bg" >
+            <div class="container-fluid">
+              <div class="row">
+                <h2 class="text-white text-center mb-4">Music Festivals</h2>
+                
+                /<div class="container-fluid text-center my-3"> 
+                <div class="row mx-auto my-auto justify-content-center"> 
+
+                          <div class="container py-3">
+                            <div class="p-3 m-n3 overflow-hidden">
+                              <div id="carousel-multiple-2" class="carousel slide carousel-multiple" data-ride="carousel"
+                                   data-maximum-items-per-slide="4">
+                                <div class="row position-relative">
+                                  <div class="row carousel-inner mx-0" id="item-slider-fest">
+                                    <div class="carousel-item col-xs-8 col-sm-6 col-md-6 col-lg-4 col-xl-4 active">
+                                        <div class="col ticket-container">
+                                            <div class="card shadow-sm ticket-body">
+                                            <img src="./images/OIP (1).jpg"  class="about-image img-fluid" width="">
+                                            <div class="card-body  ticket-details  first-item">
+                                                <h6 class="event-name text-white text-center first-item-text">Music Festivals 2023!<br> Scroll right ▶</h6>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                            </div>                                          
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                </div>
+                                   
+                                  </div>
+                                  <a class="carousel-control-prev slide-button" href="#carousel-multiple-2" role="button" data-slide="prev">
+                                    <span class=" prev-button" ><<</span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next   slide-button" href="#carousel-multiple-2" role="button" data-slide="next">
+                                    <span class=" forward-button" >>></span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        
+                </div>
+            </div>
+              
+
+            </div>
+          </div>
+        </section>
+        
+
+        <section class="about-section section-padding " >
+            <div class="container-fluid">
+              <div class="row">
+                <h2 class="text-white text-center mb-4">Rock Concerts</h2>
+                
+                <div class="container-fluid text-center my-3"> 
+                    <div class="row mx-auto my-auto justify-content-center"> 
+
+                          <div class="container py-3">
+                            <div class="p-3 m-n3 overflow-hidden">
+                              <div id="carousel-multiple-3" class="carousel slide carousel-multiple" data-ride="carousel"
+                                   data-maximum-items-per-slide="4">
+                                <div class="row position-relative">
+                                  <div class="row carousel-inner mx-0" id="item-slider-rock">
+                                    <div class="carousel-item col-xs-8 col-sm-6 col-md-6 col-lg-4 col-xl-4 active">
+                                        <div class="col ticket-container">
+                                            <div class="card shadow-sm ticket-body">
+                                            <img src="./images/OIP (1).jpg"  class="about-image img-fluid" width="">
+                                            <div class="card-body  ticket-details  first-item">
+                                                <h6 class="event-name text-white text-center first-item-text">Rock Concerts 2023!<br> Scroll right ▶</h6>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                            </div>                                          
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                </div>
+                                   
+                                  </div>
+                                  <a class="carousel-control-prev slide-button" href="#carousel-multiple-3" role="button" data-slide="prev">
+                                    <span class=" prev-button" ><<</span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next   slide-button" href="#carousel-multiple-3" role="button" data-slide="next">
+                                    <span class=" forward-button" >>></span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        
+                </div>
+            </div>
+            </div>
+          </div>
+        </section>
+
+       
+
+        <section class="blue-bg section-padding " >
+            <div class="container-fluid">
+              <div class="row">
+                <h2 class="text-white text-center mb-4">Jazz Concerts</h2>
+                
+                <div class="container-fluid text-center my-3"> 
+                    <div class="row mx-auto my-auto justify-content-center"> 
+
+                          <div class="container py-3">
+                            <div class="p-3 m-n3 overflow-hidden">
+                              <div id="carousel-multiple-4" class="carousel slide carousel-multiple" data-ride="carousel"
+                                   data-maximum-items-per-slide="4">
+                                <div class="row position-relative">
+                                  <div class="row carousel-inner mx-0"id="item-slider-jazz">
+                                    <div class="carousel-item col-xs-8 col-sm-6 col-md-6 col-lg-4 col-xl-4 active">
+                                        <div class="col ticket-container">
+                                            <div class="card shadow-sm ticket-body">
+                                            <img src="./images/OIP (1).jpg"  class="about-image img-fluid" width="">
+                                            <div class="card-body  ticket-details  first-item">
+                                                <h6 class="event-name text-white text-center first-item-text">Jazz Concerts 2023!<br> Scroll right ▶</h6>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                            </div>                                          
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                </div>
+                                   
+                                  </div>
+                                  <a class="carousel-control-prev slide-button" href="#carousel-multiple-4" role="button" data-slide="prev">
+                                    <span class=" prev-button" ><<</span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next   slide-button" href="#carousel-multiple-4" role="button" data-slide="next">
+                                    <span class=" forward-button" >>></span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        
+                </div>
+            </div>
+            </div>
+          </div>
+        </section>
+    </section>
+
+        
+
+        <section class="contact-section section-padding section-bg" >
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">Interested? Let's talk</h2>
+
+                        <nav class="d-flex justify-content-center">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
+                                role="tablist">
+                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
+                                    aria-controls="nav-ContactForm" aria-selected="false">
+                                    <h5>Contact Form</h5>
+                                </button>
+
+                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
+                                    aria-controls="nav-ContactMap" aria-selected="false">
+                                    <h5>Google Maps</h5>
+                                </button>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+                                aria-labelledby="nav-ContactForm-tab">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+                                    role="form">
+                                    <div class="contact-form-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="text" name="contact-name" id="contact-name"
+                                                    class="form-control" placeholder="Full name" required>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="email" name="contact-email" id="contact-email"
+                                                    pattern="[^ @]*@[^ @]*" class="form-control"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" name="contact-company" id="contact-company"
+                                            class="form-control" placeholder="Company" required>
+
+                                        <textarea name="contact-message" rows="3" class="form-control"
+                                            id="contact-message" placeholder="Message"></textarea>
+
+                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">Send message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
+                                aria-labelledby="nav-ContactMap-tab">
+                                <iframe class="google-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29974.469402870927!2d120.94861466021855!3d14.106066818082482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd777b1ab54c8f%3A0x6ecc514451ce2be8!2sTagaytay%2C%20Cavite%2C%20Philippines!5e1!3m2!1sen!2smy!4v1670344209509!5m2!1sen!2smy"
+                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer"  id="section_6">
+        <div class="site-footer-top red-bg">
+            <div class="container ">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h3 class="text-white mb-lg-0">"Discover, Connect, and Grow with Ticket Station!"</h3>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index.html" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html#section_2" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="ticketpage.html" class="site-footer-link">Events</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html#section_4" class="site-footer-link">Schedule</a>
+                        </li>
+
+                        
+
+                        <li class="site-footer-link-item">
+                            <a href="index.html#section_6" class="site-footer-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            090-080-0760
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            hello@ticketStation.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        Johannesburg, South Africa</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <!-- <p class="copyright-text">Copyright © 2036 Festava Live Company</p>
+                        <p class="copyright-text">Distributed by: <a href="https://themewagon.com">ThemeWagon</a></p> -->
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+
+    <!-- JAVASCRIPT FILES -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'></script>
+    <script src="js/script.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
   
+    <script src="js/index.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/ticket.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/login.js"></script>
+    
+</body>
 
-if("logStatus" in localStorage){
-  window.location.href = "ticket.html";
-  
-}
-else{
-  localStorage.setItem("redirect", JSON.stringify({redirect:'yes'}));
-  window.location.href = "signup.html";
-  
-}
-}
-
-
-function readMore(obj){
-  var a=obj;
-  localStorage.setItem("a", JSON.stringify(a));
-  window.location.href = "decription.html";
-
-}
-
-function logOut(){
-  localStorage.removeItem('logStatus');
-  window.location.href = "index.html";
-}
-
+</html>
