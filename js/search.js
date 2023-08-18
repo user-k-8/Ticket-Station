@@ -44,7 +44,7 @@ const searchOutput=(item)=>{
     let eventObject = item;
     searchResults.innerHTML+=`
   
-          <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+          <div class="col-lg-4 col-md-6 col-sm-8 col-10 search-card">
               <div class="col ticket-container">
                   <div class="card shadow-sm ticket-body">
                   <img src="./${eventObject.img}"  class="about-image img-fluid" width="">
