@@ -32,11 +32,11 @@ class MusicEvent{
 }
 
 
-let johannesburgMusicFestival = new MusicEvent("Johannesburg Music Festival", "11-13 November", 699 , "images/R (2).jpg" , "johannesburgMusicFestival", '2023-11-11' , "modal1", "ticket1", "Harmonia Gardens Amphitheater", "1. Taylor Sparks 2. The Beatlejams 3. Neon Skyline 4. Starstruck Avenue"); 
-let johannesburgMusicFestivalPopular = new MusicEvent("Johannesburg Music Festival", "11-13 November", 699 , "images/R (2).jpg" , "johannesburgMusicFestivalPopular", '2023-11-11'  , "modal2", "ticket2", "Harmonia Gardens Amphitheater", "1. Taylor Sparks 2. The Beatlejams 3. Neon Skyline 4. Starstruck Avenue"); 
+let johannesburgMusicFestival = new MusicEvent("Joburg Music Festival 2023", "11-13 November", 699 , "images/R (2).jpg" , "johannesburgMusicFestival", '2023-11-11' , "modal1", "ticket1", "Harmonia Gardens Amphitheater", "1. Taylor Sparks 2. The Beatlejams 3. Neon Skyline 4. Starstruck Avenue"); 
+let johannesburgMusicFestivalPopular = new MusicEvent("Joburg Music Festival 2023", "11-13 November", 699 , "images/R (2).jpg" , "johannesburgMusicFestivalPopular", '2023-11-11'  , "modal2", "ticket2", "Harmonia Gardens Amphitheater", "1. Taylor Sparks 2. The Beatlejams 3. Neon Skyline 4. Starstruck Avenue"); 
 let capeTownMusicFestival =new MusicEvent("Cape Town Music Festival", "10-17 October", 599 , "images/tomorrowland-youredm.jpg", "capeTownMusicFestival", '2023-10-17',  "modal3", "ticket3" , "Melody Mirage Dome" , "1. Willow Wind2. The Whispering Pines 3. Sunflower Strings 4. Wildwood Wanderers");
 let capeTownMusicFestivalPopular =new MusicEvent("Cape Town Music Festival", "10-17 October", 599 , "images/tomorrowland-youredm.jpg", "capeTownMusicFestivalPopular", '2023-10-17' , "modal4", "ticket4", "Melody Mirage Dome","1. Willow Wind2. The Whispering Pines 3. Sunflower Strings 4. Wildwood Wanderers");
-let durbanMusicFestival =new MusicEvent("Durban Music Festival", "9-17 September",799 ,"images/maxresdefault.jpg","durbanMusicFestival",'2023-09-09' , "modal5" , "ticket5", "TempoTropolis Stadium", "1. Electric Pulse 2. Luna Rhythms 3. Synthwave Syndicate 4. Techno Titans");
+let durbanMusicFestival =new MusicEvent("Durban Music Festival 2023", "9-17 September",799 ,"images/maxresdefault.jpg","durbanMusicFestival",'2023-09-09' , "modal5" , "ticket5", "TempoTropolis Stadium", "1. Electric Pulse 2. Luna Rhythms 3. Synthwave Syndicate 4. Techno Titans");
 let bloemfonteinMusicFestival = new MusicEvent("Bloemfontein Music Festival", "8-14 March", 499 , "images/sunburn-fest.jpg", "bloemfonteinMusicFestival", '2023-03-14' , "modal6" , "ticket6", "Rhythm Realm Arena", "1. Dusty Trails 2. Southern Harmony 3. Backroad Ramblers 4. Midnight Rodeo");
 let pretoriaMusicFestival = new MusicEvent("Pretoria Music Festival", "15-17 May", 599 , "images/Imagesplash01.jpg", "pretoriaMusicFestival", '2023-05-15' , "moda7", "ticket7", "Crescendo Cove Pavilion", "1. Velvet Soul 2. Moonlight Groove 3. Soulful Serenade 4. Midnight Blues");
 let polokwaneMusicFestival = new MusicEvent("Polokwane Music Festival", "16-22 July", 799 , "images/R (6).jpg", "polokwaneMusicFestival", '2023-07-16' , "modal8", "ticket8", "Euphonic Oasis Garden", "1. Echoes of Tomorrow 2. The Cosmic Runaways 3. Gravity's Edge 4. Electric Dreamscape");
@@ -45,18 +45,18 @@ let johannesburgJazzConcert = new MusicEvent("Johannesburg Jazz Concert", "15-19
 let johannesburgJazzConcertPopular = new MusicEvent("Johannesburg Jazz Concert", "15-19 September", 699 , "images/R.png", "johannesburgJazzConcertPopular", '2023-09-15' , "modal11", "ticket11", "Serenade Sanctuary Hall", "1. Caribbean Breeze 2. Island Vibe 3. Reggae Roots Collective 4. Rhythm Redemption" );
 let capeTownJazzConcert = new MusicEvent("Cape Town Jazz Concert", "18-21 April", 599 , "images/R (4).jpg", "capeTownJazzConcert", '2023-04-18' , "modal12" , "ticket12", "Cadence Castle Courtyard", "1. Mic Drop Kings 2. Flow Dynasty 3. Lyricist Lounge 4. Urban Rhythm Crew");
 let capeTownJazzConcertPopular = new MusicEvent("Cape Town Jazz Concert", "18-21 April", 599 , "images/R (4).jpg", "capeTownJazzConcertPopular", '2023-04-18' , "modal13", "ticket13", "Cadence Castle Courtyard", "1. Mic Drop Kings 2. Flow Dynasty 3. Lyricist Lounge 4. Urban Rhythm Crew");
-let durbanJazzConcert = new MusicEvent("Durban Jazz Concert", "8-12 June", 499 , "images/maxresdefault (1).jpg", "durbanJazzConcert", '2023-06-08' , "modal14", "ticket14", "Sonorous Skyline Rooftop", "1. Serenade Symphony 2. Modern Maestros 3. Orchestral Elegance 4. Melodic Fusion");
+let durbanJazzConcert = new MusicEvent("Durban Jazz Concert 2023", "8-12 June", 499 , "images/maxresdefault (1).jpg", "durbanJazzConcert", '2023-06-08' , "modal14", "ticket14", "Sonorous Skyline Rooftop", "1. Serenade Symphony 2. Modern Maestros 3. Orchestral Elegance 4. Melodic Fusion");
 let bloemfonteinJazzConcert = new MusicEvent("Bloemfontein Jazz Concert", "5-9 November" , 499 , "images/The-Jazz-Experience-A-Fine-Smooth-Jazz-Session-cover.jpg", "bloemfonteinJazzConcert", '2023-11-05' , "modal15", "ticket15", "Melodia Meadows Field", "1. Smooth Jazz All-Stars 2. Jazz Noir Quartet 3. Swingin' Soul Ensemble 4. Jazz Odyssey");
-let pretoriaJazzConcert = new MusicEvent("Pretoria Jazz Concert","20-24 December", 699 , "images/R (7).jpg", "pretoriaJazzConcert",'2023-12-20' , "modal16", "ticket16", "Harmony Haven Retreat", "1. Thunderstrike 2. Infernal Abyss 3. Meltdown Mayhem 4. Dark Requiem" );
+let pretoriaJazzConcert = new MusicEvent("Pretoria Jazz Concert 2023","20-24 December", 699 , "images/R (7).jpg", "pretoriaJazzConcert",'2023-12-20' , "modal16", "ticket16", "Harmony Haven Retreat", "1. Thunderstrike 2. Infernal Abyss 3. Meltdown Mayhem 4. Dark Requiem" );
 let polokwaneJazzConcert = new MusicEvent("Polokwane Jazz Concert", "16-20 February", 399 , "images/OIP (7).jpg", "polokwaneJazzConcert", '2023-02-16' , "modal17", "ticket17", "Decibel Den Club", "1. Salsa Fiesta 2. Rumba Rhythms 3. Tango Fire 4. Mariachi Magic");
 let pietermaritzburgJazzConcert = new MusicEvent("Pietermaritzburg Jazz Concert", "27-31 October", 499 , "images/jazz-image-3.jpg", "pietermaritzburgJazzConcert", '2023-10-27' , "modal18", "ticket18",  "Harmonic Harbor Pier", "1. Funky Fusion2. Soul Train Revival 3. Groove Nation 4. Funkadelic Jam");
-let johannesburgRockConcert = new MusicEvent("Johannesburg Rock Concert", "22-25 January", 399 , "images/R.jpg", "johannesburgRockConcert", '2023-01-22' , "modal19", "ticket19", "Chorus Canyon Theatre", "1. Stellar Voices 2. Pop Princess Collective 3. Diamond Divas 4. Glitterati Queens");
-let johannesburgRockConcertPopular = new MusicEvent("Johannesburg Rock Concert", "22-25 January", 399 , "images/R.jpg", "johannesburgRockConcertPopular", '2023-01-22' , "modal20", "ticket20", "Chorus Canyon Theatre", "1. Stellar Voices 2. Pop Princess Collective 3. Diamond Divas 4. Glitterati Queens");
+let johannesburgRockConcert = new MusicEvent("Joburg Rock Concert 2023", "22-25 January", 399 , "images/R.jpg", "johannesburgRockConcert", '2023-01-22' , "modal19", "ticket19", "Chorus Canyon Theatre", "1. Stellar Voices 2. Pop Princess Collective 3. Diamond Divas 4. Glitterati Queens");
+let johannesburgRockConcertPopular = new MusicEvent("Joburg Rock Concert 2023", "22-25 January", 399 , "images/R.jpg", "johannesburgRockConcertPopular", '2023-01-22' , "modal20", "ticket20", "Chorus Canyon Theatre", "1. Stellar Voices 2. Pop Princess Collective 3. Diamond Divas 4. Glitterati Queens");
 let capeTownRockConcert = new MusicEvent("Cape Town Rock Concert", "10-14 August", 399 , "images/OIP (1).jpg", "capeTownRockConcert",  '2023-08-23' , "modal21", "ticket21", "Symphonia Grove Grove", "1. Midnight Blues 2. Soulful Stompers 3. Delta Crossroads 4. Bluesy Jam Session");
 let capeTownRockConcertPopular = new MusicEvent("Cape Town Rock Concert", "10-14 August", 399 , "images/OIP (1).jpg", "capeTownRockConcertPopular",  '2023-08-23' , "modal22", "ticket22", "Symphonia Grove Grove", "1. Midnight Blues 2. Soulful Stompers 3. Delta Crossroads 4. Bluesy Jam Session");
-let durbanRockConcert = new MusicEvent("Durban Rock Concert", "2-5 July", 599 , "images/R (1).jpg", "durbanRockConcert", '2023-07-02' , "modal23", "ticket23", "Orchestra Oasis Oasis", "1. Acoustic Alchemy 2. Unplugged Harmonies 3. Chilled Strings 4. Acoustic Revival");
+let durbanRockConcert = new MusicEvent("Durban Rock Concert 2023", "2-5 July", 599 , "images/R (1).jpg", "durbanRockConcert", '2023-07-02' , "modal23", "ticket23", "Orchestra Oasis Oasis", "1. Acoustic Alchemy 2. Unplugged Harmonies 3. Chilled Strings 4. Acoustic Revival");
 let bloemfonteinRockConcert = new MusicEvent("Bloemfontein Rock Concert", "24-28 May" , 499 , "images/OIP (2).jpg", "bloemfonteinRockConcert", '2023-05-24' , "modal24", "ticket24", "Melody Mesa Ridge", "1. Global Groove Ensemble 2. Worldbeat Wanderers 3. Ethereal Echoes 4. Transcendental Tribe");
-let pretoriaRockConcert = new MusicEvent("Pretoria Rock Concert", "28-31 March", 599 , "images/OIP (9).jpg", "pretoriaRockConcert", '2023-03-28' , "modal25", "ticket25", "Melodious Moonlight Terrace", "1. Eternal Nightfall 2. Shadow's Embrace 3. Gothic Requiem 4. Dark Melancholia");
+let pretoriaRockConcert = new MusicEvent("Pretoria Rock Concert 2023", "28-31 March", 599 , "images/OIP (9).jpg", "pretoriaRockConcert", '2023-03-28' , "modal25", "ticket25", "Melodious Moonlight Terrace", "1. Eternal Nightfall 2. Shadow's Embrace 3. Gothic Requiem 4. Dark Melancholia");
 let polokwaneRockConcert= new MusicEvent("Polokwane Rock Concert", "24-28 June",  499 , "images/R (1).png", "polokwaneRockConcert", '2023-06-24' , "modal26" , "ticket26", "Harmonic Harbor Pier", "1. Funky Fusion2. Soul Train Revival 3. Groove Nation 4. Funkadelic Jam");
 let pietermaritzburgRockConcert = new MusicEvent("Pietermaritzburg Rock Concert", "10-14 December", 499 , "images/OIP (3).jpg", "pietermaritzburgRockConcert", '2023-12-10'  , "modal27", "ticket27",  "Harmonic Harbor Pier", "1. Funky Fusion2. Soul Train Revival 3. Groove Nation 4. Funkadelic Jam");
 let eventObjects = [johannesburgMusicFestival, capeTownMusicFestival, durbanMusicFestival, bloemfonteinMusicFestival, pretoriaMusicFestival, polokwaneMusicFestival, pietermaritzburgFestival, johannesburgJazzConcert, capeTownJazzConcert, durbanJazzConcert, bloemfonteinJazzConcert, pretoriaJazzConcert, polokwaneJazzConcert, pietermaritzburgJazzConcert, johannesburgRockConcert, capeTownRockConcert, durbanRockConcert, bloemfonteinRockConcert, pretoriaRockConcert, polokwaneRockConcert, pietermaritzburgRockConcert];
@@ -73,21 +73,20 @@ let jazzConcerts =[ johannesburgJazzConcert, capeTownJazzConcert, durbanJazzConc
 const  slideOutput= (eventArray,j)=>{
   const objectHTML =
   ` 
-  <div class="slide-item">
-      <div class=" col-12">
+  <div class="carousel-item col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
           <div class="col ticket-container">
               <div class="card shadow-sm ticket-body">
               <img src="./${eventArray[j].img}"  class="about-image img-fluid" width="">
-              <div class="card-body  ticket-details">
+              <div class="card-body  ticket-details ">
                   <h6 class="event-name text-white">${eventArray[j].name}</h6>
-              <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between align-items-center ">
               <div>
               <!-- Button trigger modal -->
-        <button type="button" class="btn  btn-outline-secondary ticket-button" data-bs-toggle="modal" data-bs-target="#${eventArray[j].id}" >
+        <button type="button" class="btn btn-sm  btn-outline-secondary ticket-button details-button" data-bs-toggle="modal" data-bs-target="#${eventArray[j].id}" >
             View Details
           </button>
               
-              <button class="btn  btn-outline-secondary ticket-button" onclick="buy(${eventArray[j].id})">Buy Ticket</button>
+              <button class="btn btn-sm btn-outline-secondary ticket-button" onclick="buy(${eventArray[j].id})">Buy Ticket</button>
               </div>
               
               </div>
@@ -95,7 +94,7 @@ const  slideOutput= (eventArray,j)=>{
               </div>
               </div>
   </div>
-  </div>
+  
 `
 return objectHTML;
 }
@@ -186,15 +185,22 @@ if("logStatus" in localStorage){
   
 }
 else{
+  localStorage.setItem("redirect", JSON.stringify({redirect:'yes'}));
   window.location.href = "signup.html";
+  
 }
 }
+
 
 function readMore(obj){
   var a=obj;
   localStorage.setItem("a", JSON.stringify(a));
   window.location.href = "decription.html";
+
 }
 
-
+function logOut(){
+  localStorage.removeItem('logStatus');
+  window.location.href = "index.html";
+}
 
