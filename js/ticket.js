@@ -46,9 +46,9 @@ ticketQuantity.addEventListener('input',
 form3.addEventListener('submit', e =>{
 
   e.preventDefault();
-  let q ="true";
- if(q=="true"){
-     form3.submit();
+
+ if(true){
+   
     window.location.href = "confirmation.html";
  }
  else{
