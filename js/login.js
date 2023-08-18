@@ -39,7 +39,6 @@ form2.addEventListener('submit', e =>{
         let logStatus = {logstatus:"loggedin"}
         
         localStorage.setItem("logStatus", JSON.stringify(logStatus));
-        form2.submit();
        
         if("redirect" in localStorage){
           localStorage.removeItem('redirect');
