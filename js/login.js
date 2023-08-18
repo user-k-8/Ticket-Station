@@ -42,6 +42,7 @@ form2.addEventListener('submit', e =>{
         form2.submit();
        
         if("redirect" in localStorage){
+          localStorage.removeItem('redirect');
             window.location.href = "ticket.html";
           }
           else{
