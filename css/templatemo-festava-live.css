@@ -46,6 +46,7 @@ https://templatemo.com/tm-583-festava-live
 body {
   background-color:#03071E;
   font-family: var(--body-font-family); 
+  overflow-x: hidden !important;
 }
 
 
@@ -740,11 +741,14 @@ background-color:#6A040F ;
   border-radius: 20px !important;
   opacity: 1 !important;
 }
-
+.slide-button{
+  /* background-color: #021243 !important; */
+  width: 50px !important;
+}
 .prev-button{
   background-color: #6A040F !important;
-  height: 50px;
-  width: 50px !important;
+  height: 35px;
+  width: 35px !important;
   margin-top: 10px;
   margin-left: -20px !important;
   font-size: 20px !important;
@@ -757,8 +761,8 @@ background-color:#6A040F ;
  .forward-button{
   opacity:1 !important;
    background-color: #6A040F !important;
-   height: 50px;
-   width: 50px !important;
+   height: 35px;
+   width: 35px !important;
    margin-top: 10px;
    margin-right: -20px !important;
    font-size: 20px !important;
@@ -1381,6 +1385,11 @@ input[type="text"], input[type="email"], input[type="number"], input[type="tel"]
 
   font-size: 19px !important;
 }
+
+.search-card{
+  margin-bottom: 25px !important;
+}
+
 
 
 
