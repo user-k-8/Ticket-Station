@@ -9,7 +9,7 @@ const searchContainer =window.parent.document.querySelector('.search-container')
 
 
 
-eventsArray=["Johannesburg Music Festival","Cape Town Music Festival", "Durban Music Festival", "Bloemfontein Music Festival", "Pretoria Music Festival", "Polokwane Music Festival", "Pietermaritzburg Music Festival", "Johannesburg Jazz Concert", "Cape Town Jazz Concert", "Durban Jazz Concert", "Bloemfontein Jazz Concert", "Pretoria Jazz Concert","Polokwane Jazz Concert","Pietermaritzburg Jazz Concert","Johannesburg Rock Concert","Cape Town Rock Concert", "Durban Rock Concert","Bloemfontein Rock Concert", "Pretoria Rock Concert", "Polokwane Rock Concert", "Pietermaritzburg Rock Concert"];
+eventsArray=["Joburg Music Festival 2023","Cape Town Music Festival", "Durban Music Festival 2023", "Bloemfontein Music Festival", "Pretoria Music Festival", "Polokwane Music Festival", "Pietermaritzburg Music Festival", "Johannesburg Jazz Concert", "Cape Town Jazz Concert", "Durban Jazz Concert 2023", "Bloemfontein Jazz Concert", "Pretoria Jazz Concert 2023","Polokwane Jazz Concert","Pietermaritzburg Jazz Concert","Joburg Rock Concert 2023","Cape Town Rock Concert", "Durban Rock Concert 2023","Bloemfontein Rock Concert", "Pretoria Rock Concert 2023", "Polokwane Rock Concert", "Pietermaritzburg Rock Concert"];
 
 
 // Event object constructor
