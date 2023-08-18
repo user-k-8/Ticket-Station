@@ -99,7 +99,7 @@ const searchOutput=(item)=>{
 const performSearch = (text) =>{
  
   const filteredEvents = eventsArray.filter((item)=> {
-   return  item.toLowerCase().includes(text.toLowerCase());
+   return  item.includes(text);
   });
  
   return filteredEvents;
