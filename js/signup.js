@@ -108,8 +108,8 @@ form.addEventListener('submit', e =>{
 
     if(form.dataset.nameIsValid==="true" && form.dataset.emailIsValid==="true" && form.dataset.passwordIsValid=== "true"){
       successMessage.textContent = "Form successfully completed!"
-       form.submit();
-      window.location.href = "login.html"
+     
+      window.location.href = "login.html";
     }else{
         successMessage.textContent = "Form not successfully completed!"
     }
