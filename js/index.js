@@ -86,7 +86,7 @@ const  slideOutput= (eventArray,j)=>{
             View Details
           </button>
               
-              <button class="btn btn-sm btn-outline-secondary ticket-button" onclick="buy(${eventArray[j].id})">Buy Ticket</button>
+              <button class="btn btn-sm btn-outline-danger ticket-button" onclick="buy(${eventArray[j].id})">Buy Ticket</button>
               </div>
               
               </div>
