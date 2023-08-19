@@ -51,7 +51,7 @@ const searchOutput=(item)=>{
                   <div class="card-body  ticket-details">
                       <h6 class="event-name text-white">${eventObject.name}</h6>
                   <div class="d-flex justify-content-between align-items-center">
-                  <div>
+                  <div class="d-flex justify-content-between align-items-center">
                   <!-- Button trigger modal -->
             <button type="button" class="btn  btn-outline-secondary ticket-button" data-bs-toggle="modal" data-bs-target="#${eventObject.id}" >
                 View Details
@@ -72,7 +72,7 @@ const searchOutput=(item)=>{
                       <p class="text-dark  text-center">Price: 💲 R ${eventObject.price}</p>
                     </div>
                     <div class="text-center">                
-                    <button type="button" class="btn btn-primary"  onclick="readMore(${eventObject.id})">Read More</button>               
+                    <button type="button" class="btn btn-danger"  onclick="readMore(${eventObject.id})">Read More</button>               
                   </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
