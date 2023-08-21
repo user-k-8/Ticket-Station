@@ -82,7 +82,7 @@ const  slideOutput= (eventArray,j)=>{
               <div class="d-flex justify-content-between align-items-center ">
               <div>
               <!-- Button trigger modal -->
-        <button type="button" class="btn btn-sm  btn-outline-secondary ticket-button details-button" data-bs-toggle="modal" data-bs-target="#${eventArray[j].id}" >
+        <button type="button" class="btn btn-sm  btn-outline-danger ticket-button details-button" data-bs-toggle="modal" data-bs-target="#${eventArray[j].id}" >
             View Details
           </button>
               
@@ -117,7 +117,7 @@ const modalOutput= (eventArray, j)=>{
                   <p class="text-dark  text-center">Price: 💲 R ${eventArray[j].price}</p>             
                 </div>
                 <div class="text-center">                
-                  <button type="button" class="btn btn-primary"  onclick="readMore(${eventArray[j].id})">Read More</button>               
+                  <button type="button" class="btn btn-danger"  onclick="readMore(${eventArray[j].id})">Read More</button>               
                 </div>
                 <div class="modal-footer">                
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                
@@ -197,10 +197,5 @@ function readMore(obj){
   localStorage.setItem("a", JSON.stringify(a));
   window.location.href = "decription.html";
 
-}
-
-function logOut(){
-  localStorage.removeItem('logStatus');
-  window.location.href = "index.html";
 }
 
