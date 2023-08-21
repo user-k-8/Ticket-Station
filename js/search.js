@@ -1,5 +1,3 @@
-
-
 let searchFilter = document.getElementById('search-filter');
 let dateFilter = document.getElementById('date-filter');
 let eventListFilter = document.getElementById('event-list-filter');
@@ -53,7 +51,7 @@ const searchOutput=(item)=>{
                   <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex justify-content-between align-items-center">
                   <!-- Button trigger modal -->
-            <button type="button" class="btn  btn-outline-secondary ticket-button" data-bs-toggle="modal" data-bs-target="#${eventObject.id}" >
+            <button type="button" class="btn  btn-outline-danger ticket-button" data-bs-toggle="modal" data-bs-target="#${eventObject.id}" >
                 View Details
               </button>
               
@@ -82,7 +80,7 @@ const searchOutput=(item)=>{
                 </div>
               </div>
                   
-             <button class="btn  btn-outline-secondary ticket-button" onclick="buy(${eventObject.id})">Buy Ticket</button>
+             <button class="btn  btn-outline-danger ticket-button" onclick="buy(${eventObject.id})">Buy Ticket</button>
                   </div>
                   
                   </div>
