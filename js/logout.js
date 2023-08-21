@@ -1,6 +1,6 @@
 function logOut(){
     localStorage.removeItem('logStatus');
-    window.location.href = "ticketpage.html";
+    window.location.href = "index.html";
   }
 
 let logInButtons =document.querySelectorAll('.login');
