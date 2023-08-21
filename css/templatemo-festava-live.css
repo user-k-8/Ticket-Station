@@ -1286,7 +1286,13 @@ background-color:#6A040F ;
 }
 
 
-
+.signup-text{
+   font-size: 25px !important;
+    color:#EE5007;
+}
+.signup-bg{
+  background-color: ;
+}
 
 .searchResults{
   color: white;
@@ -1388,6 +1394,10 @@ input[type="text"], input[type="email"], input[type="number"], input[type="tel"]
 
 .search-card{
   margin-bottom: 25px !important;
+}
+
+.signout{
+  display: none !important;
 }
 
 
